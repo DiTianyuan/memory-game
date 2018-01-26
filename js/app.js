@@ -1,7 +1,7 @@
 /*
  * 创建一个包含所有卡片的数组
  */
-var cards = new Array();
+var cards = [];
 var li = $(".deck").children("li");
 function getList() {
     for (var i = 0; i < li.length; i++) {
@@ -88,7 +88,7 @@ $(".restart").click(function() {
  */
 
 //一个数组，储存翻开待检查的卡片
-var open = new Array();
+var open = [];
 
 function checkWhetherMatch() {
     if(open.length === 2) {
