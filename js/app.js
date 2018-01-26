@@ -45,7 +45,7 @@ $(document).ready(function(){
     shuffle(cards);
     $(".deck").empty();
     cards.forEach(resetHTML);
-})
+});
 
 //洗牌并重置页面（初始化）
 function initialize() {
@@ -131,12 +131,12 @@ function moveCounter() {
 var stars = 3;
 function score() {
     if(moves >= 15 && moves < 20) {
-        $(".star3").attr("class", "fa fa-star-o star3")
+        $(".star3").attr("class", "fa fa-star-o star3");
         stars = 2;
     }
     else if(moves > 20) {
-        $(".star3").attr("class", "fa fa-star-o star3")
-        $(".star2").attr("class", "fa fa-star-o star2")
+        $(".star3").attr("class", "fa fa-star-o star3");
+        $(".star2").attr("class", "fa fa-star-o star2");
         stars = 1;
     }
 }
@@ -144,7 +144,7 @@ function score() {
 //计时器
 var time = 0, t = 0;
 function startTimer() {
-    t = setInterval(function(){timer()}, 1000);
+    t = setInterval(function(){timer();}, 1000);
     function timer() {
         time += 1;
         $(".seconds").text(time);
