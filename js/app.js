@@ -177,24 +177,26 @@ $("#myModal").on("hidden.bs.modal", function() {
 });
 
 //单击事件发生时
-$(".deck").on("click", ".card", function(evt) {
-    //开始计时并显示在页面
-    if (t === 0) {
-        startTimer();
-    }
+$(".deck").click(function(evt) {
+    if ($(evt.target).attr("class") === "card") {
+        //开始计时并显示在页面
+        if (t === 0) {
+            startTimer();
+        }
 
-    $(evt.target).addClass("open"); //给被单击的卡片添加open show类，显示卡片的符号
-    open.push($(evt.target)); //将卡片添加到open数组中
+        $(evt.target).addClass("open"); //给被单击的卡片添加open show类，显示卡片的符号
+        open.push($(evt.target)); //将卡片添加到open数组中
 
-    //检查翻开的两张卡片是否匹配
-    checkWhetherMatch(open);
+        //检查翻开的两张卡片是否匹配
+        checkWhetherMatch(open);
 
-    //根据步数显示星级评分
-    score();
+        //根据步数显示星级评分
+        score();
 
-    cards.every(checkAllClass); //检查卡片是否已全部匹配
-    if (cards.every(checkAllClass) === true) {
-        won(); //游戏胜利执行won()
+        cards.every(checkAllClass); //检查卡片是否已全部匹配
+        if (cards.every(checkAllClass) === true) {
+            won(); //游戏胜利执行won()
+        }
     }
 });
 
